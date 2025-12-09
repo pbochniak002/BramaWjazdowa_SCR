@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="9d44511d-2321-40a1-b675-a12398bdb0be" manual="true">
+    <element uuid="9a5d0332-24eb-4659-bf59-dff860075918" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>air_medium</seg>
+      </bo>
+      <position/>
+      <size width="130.0" height="36.0"/>
+    </element>
+    <element uuid="09e959de-4004-4da1-8849-11575521221a" manual="true">
+      <element uuid="f9c0794d-e420-4e05-b0ae-bd3865d43f8c" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>lamp_out</seg>
+        </bo>
+        <position x="273.7330894470215" y="147.5"/>
+      </element>
+      <element uuid="abb597d6-96df-42df-bdb6-709ba143a93c" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>limit_closed_in</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <element uuid="6b31f293-adc9-411d-90cb-578b6fe5a5af" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>limit_open_in</seg>
+        </bo>
+        <position x="250.01563262939453" y="22.5"/>
+      </element>
+      <element uuid="01848b09-db19-4caa-afd1-c12f76b47031" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>motor_out</seg>
+        </bo>
+        <position x="268.55079650878906" y="85.0"/>
+      </element>
+      <element uuid="2d0c3d6d-31df-47af-802e-9a73a8f79f7f" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>obstacle_in</seg>
+        </bo>
+        <position y="110.0"/>
+      </element>
+      <element uuid="e6181b74-232e-4c76-88d3-d2be4037bb08" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>pin_in</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="e9ed7eb5-4eed-4cd0-9bf1-243134db4de4" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>remote_in</seg>
+        </bo>
+        <position y="160.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>controller_app</seg>
+      </bo>
+      <position x="742.4765625" y="223.0"/>
+      <size width="340.5833435058594" height="210.0"/>
+    </element>
+    <element uuid="636a2c94-c32a-4037-9d91-63ed58220b33" manual="true">
+      <element uuid="37e3c736-e58f-4db2-92cf-9adda96d2909" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_slot</seg>
+        </bo>
+        <position x="135.1588478088379" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>cpu</seg>
+      </bo>
+      <position x="1188.3008308410645" y="456.0"/>
+      <size width="196.8203010559082" height="60.0"/>
+    </element>
+    <element uuid="8ef0f5f6-0267-492f-a4c1-8eb4a8f0af36" manual="true">
+      <element uuid="9a55a4ac-0b43-4bd3-99b7-65fd7016614d" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="b7b3f1ba-f81c-4b9f-8bee-b28cff1c51e6" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>lamp_cmd</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>lamp</seg>
+      </bo>
+      <position x="1714.5845947265625" y="343.5"/>
+      <size width="245.72005081176758" height="110.0"/>
+    </element>
+    <element uuid="14dae946-e969-4a81-969e-e843aea7c9fb" manual="true">
+      <element uuid="7644acf8-b2b5-4834-8297-eb7f7e2a7e51" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>access_point</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>main_bus</seg>
+      </bo>
+      <position x="1405.12109375" y="315.5"/>
+      <size width="289.4635429382324" height="60.0"/>
+    </element>
+    <element uuid="25dca61d-51d4-4c4c-a1ab-90eaa9afcd72" manual="true">
+      <element uuid="d15fdaa3-426a-4db4-a5ef-0879c7ccdac7" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_slot</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>mem</seg>
+      </bo>
+      <position x="1714.5845947265625" y="253.5"/>
+      <size width="204.95181274414062" height="60.0"/>
+    </element>
+    <element uuid="15a49baf-97c8-45b7-a9f0-32b3758fa0ba" manual="true">
+      <element uuid="3eb8b79b-c6e3-4469-8505-a20e84b9645a" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position x="168.4921875" y="10.0"/>
+      </element>
+      <element uuid="41f66e6a-5cf8-44b1-9cbb-e8a8a922f110" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>motor_cmd</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>motor</seg>
+      </bo>
+      <position x="1118.639362335205" y="315.5"/>
+      <size width="250.90234375" height="60.0"/>
+    </element>
+    <element uuid="37ff7a2e-ef94-4a80-8883-7e08826fa552" manual="true">
+      <element uuid="e4c60578-12a8-448d-a665-89bdaffa13b1" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>wireless_out</seg>
+        </bo>
+        <position x="216.66927337646484" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>remote_pilot</seg>
+      </bo>
+      <position x="12.0" y="508.0"/>
+      <size width="302.77735137939453" height="60.0"/>
+    </element>
+    <element uuid="5a06c5eb-2794-4175-9ecb-5b20425625cf" manual="true">
+      <element uuid="93592185-1584-4de8-b674-290e69cfbc25" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position x="256.6758003234863" y="60.0"/>
+      </element>
+      <element uuid="d768ae26-68a0-459d-a598-b261523f0f6f" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>remote_cmd_out</seg>
+        </bo>
+        <position x="227.03386306762695" y="10.0"/>
+      </element>
+      <element uuid="f5ed1ace-b406-4a62-87d2-147b12819a74" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>wireless_in</seg>
+        </bo>
+        <position y="35.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>rf_receiver</seg>
+      </bo>
+      <position x="360.51953379313153" y="483.0"/>
+      <size width="339.0859565734863" height="110.0"/>
+    </element>
+    <element uuid="50d0844d-87e5-4517-b87d-7a5b762c56e0" manual="true">
+      <element uuid="12812ffe-fd23-4ba9-bc8d-79e001c88b5a" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position x="208.53125" y="10.0"/>
+      </element>
+      <element uuid="e8d7d713-aa48-4319-a5b1-ae2918a4d920" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>is_active</seg>
+        </bo>
+        <position x="227.06641006469727" y="60.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>sens_closed</seg>
+      </bo>
+      <position x="421.5351791381836" y="223.0"/>
+      <size width="290.94140625" height="110.0"/>
+    </element>
+    <element uuid="9d31643b-428f-4a62-9b00-b45e99d95dfe" manual="true">
+      <element uuid="955f4852-7a49-493a-acb4-13fbe93e5cbe" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position x="295.2890853881836" y="60.0"/>
+      </element>
+      <element uuid="4e4d38cb-61a5-4ea7-8e64-cfa190e8c120" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>obstacle_detected</seg>
+        </bo>
+        <position x="257.4700622558594" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>sens_obstacle</seg>
+      </bo>
+      <position x="334.77734375" y="353.0"/>
+      <size width="377.6992416381836" height="110.0"/>
+    </element>
+    <element uuid="7925bc18-06f7-4264-a93c-2293360c73f1" manual="true">
+      <element uuid="ed13dc9c-034f-46c8-a06e-bcb8fb4a100a" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position x="199.65103912353516" y="10.0"/>
+      </element>
+      <element uuid="4b7da18c-3453-451a-b9ea-59a8b27e2066" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>is_active</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>sens_open</seg>
+      </bo>
+      <position x="1103.0599365234375" y="235.5"/>
+      <size width="282.06119537353516" height="60.0"/>
+    </element>
+    <element uuid="82aa9eac-8c37-40ba-a09c-8b0d69e81d2e" manual="true">
+      <element uuid="c670d11f-a252-49c6-aed7-03382b60162c" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position x="200.38671112060547" y="10.0"/>
+      </element>
+      <element uuid="4a66ffe1-a468-4eec-8968-b85cfec3fb82" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>pin_out</seg>
+        </bo>
+        <position x="227.05338287353516" y="60.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>user_panel</seg>
+      </bo>
+      <position x="429.6797180175781" y="93.0"/>
+      <size width="282.79686737060547" height="110.0"/>
+    </element>
+    <element uuid="098051b7-f6c5-409e-baac-3087bc783f41" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_cpu : GateControlSystem_impl_Instance.cpu.bus_slot -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="498.0"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="4568376d-6ac4-4ac1-88df-08837d9efe6e" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_cpu : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.cpu.bus_slot</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="498.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="d63fd49e-39d7-46c7-a088-bc497a8acfff" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_lmp : GateControlSystem_impl_Instance.lamp.bus_access -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="385.5"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="7a422e6b-8300-42e2-9c03-0a44fc3490db" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_lmp : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.lamp.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="385.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="359fbea3-acd4-4a6a-a4aa-834a29273199" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_mem : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.mem.bus_slot</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="295.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="1ef624fe-ac37-4a8d-baa9-6978642f9d7a" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_mem : GateControlSystem_impl_Instance.mem.bus_slot -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="1704.5845947265625" y="295.5"/>
+        <point x="1704.5845947265625" y="385.5"/>
+        <point x="1395.12109375" y="385.5"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="3897e7a1-6ee4-4fc5-8d29-a19b7bf5b962" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_mot : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.motor.bus_access</seg>
+      </bo>
+    </element>
+    <element uuid="e25fff98-1d2f-40b8-8666-9969f83e9682" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_mot : GateControlSystem_impl_Instance.motor.bus_access -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+    </element>
+    <element uuid="75db9ef3-b88f-4ffb-a310-9819460606ad" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_pnl : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.user_panel.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="135.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="3bd25435-9a16-47a1-92a1-c5aeb9a7c562" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_pnl : GateControlSystem_impl_Instance.user_panel.bus_access -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="135.0"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="8c461e0c-94b8-4938-9621-819050013fc5" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_rf : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.rf_receiver.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="445.0"/>
+        <point x="732.4765625" y="445.0"/>
+        <point x="732.4765625" y="575.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="68fe505d-613b-41d5-8ffe-a68ea03c6dd0" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_rf : GateControlSystem_impl_Instance.rf_receiver.bus_access -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="732.4765625" y="575.0"/>
+        <point x="732.4765625" y="445.0"/>
+        <point x="1395.12109375" y="445.0"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="65faca01-823b-41c3-bec4-10f071a1d6d8" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_scl : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.sens_closed.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="135.0"/>
+        <point x="722.4765625" y="135.0"/>
+        <point x="722.4765625" y="265.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="2603a9b7-8646-42fd-918c-68201cda360d" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_scl : GateControlSystem_impl_Instance.sens_closed.bus_access -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="722.4765625" y="265.0"/>
+        <point x="722.4765625" y="135.0"/>
+        <point x="1395.12109375" y="135.0"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="567278e9-4e18-45c8-a92e-1c4ccff23cd5" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_sob : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.sens_obstacle.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="445.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="a7a6c560-b7e2-47e5-8d65-f72ab4010709" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_sob : GateControlSystem_impl_Instance.sens_obstacle.bus_access -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="445.0"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="10d8ed4d-ea62-47af-960a-fa92a76a4b65" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_sop : GateControlSystem_impl_Instance.main_bus.access_point -> GateControlSystem_impl_Instance.sens_open.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="357.5"/>
+        <point x="1395.12109375" y="277.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="a021290f-4ea4-4249-bfb3-3816b19a04eb" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_sop : GateControlSystem_impl_Instance.sens_open.bus_access -> GateControlSystem_impl_Instance.main_bus.access_point</seg>
+      </bo>
+      <bendpoints>
+        <point x="1395.12109375" y="277.5"/>
+        <point x="1395.12109375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="c76f9887-139c-4538-96ca-ff17b17b07b7" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn_lamp : GateControlSystem_impl_Instance.controller_app.lamp_out -> GateControlSystem_impl_Instance.lamp.lamp_cmd</seg>
+      </bo>
+      <bendpoints>
+        <point x="1704.5845947265625" y="402.5"/>
+        <point x="1704.5845947265625" y="435.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="661c56a5-8fcb-4c52-ae04-71959cb6a3ff" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn_lim_c : GateControlSystem_impl_Instance.sens_closed.is_active -> GateControlSystem_impl_Instance.controller_app.limit_closed_in</seg>
+      </bo>
+    </element>
+    <element uuid="388faccc-4a12-4c12-a088-ec36e6c27963" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn_lim_o : GateControlSystem_impl_Instance.sens_open.is_active -> GateControlSystem_impl_Instance.controller_app.limit_open_in</seg>
+      </bo>
+    </element>
+    <element uuid="44b844da-9cb9-4098-b44b-4d7e03fa6b26" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn_motor : GateControlSystem_impl_Instance.controller_app.motor_out -> GateControlSystem_impl_Instance.motor.motor_cmd</seg>
+      </bo>
+      <bendpoints>
+        <point x="1093.0599365234375" y="340.0"/>
+        <point x="1093.0599365234375" y="357.5"/>
+      </bendpoints>
+    </element>
+    <element uuid="3d21db29-21ea-46e4-ad29-cc568f1c122f" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn_obs : GateControlSystem_impl_Instance.sens_obstacle.obstacle_detected -> GateControlSystem_impl_Instance.controller_app.obstacle_in</seg>
+      </bo>
+      <bendpoints>
+        <point x="722.4765625" y="395.0"/>
+        <point x="722.4765625" y="365.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="b69dbc98-4603-480f-9c0f-35f322bbe18f" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn_panel : GateControlSystem_impl_Instance.user_panel.pin_out -> GateControlSystem_impl_Instance.controller_app.pin_in</seg>
+      </bo>
+      <bendpoints>
+        <point x="732.4765625" y="185.0"/>
+        <point x="732.4765625" y="265.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="fbb17b8b-ddcd-4e33-ad6a-d4ff6905b093" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn_rf_int : GateControlSystem_impl_Instance.rf_receiver.remote_cmd_out -> GateControlSystem_impl_Instance.controller_app.remote_in</seg>
+      </bo>
+      <bendpoints>
+        <point x="722.4765625" y="525.0"/>
+        <point x="722.4765625" y="415.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="a7cea2c3-c167-4ba1-9957-0d42434aba8c" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>wireless_link : GateControlSystem_impl_Instance.remote_pilot.wireless_out -> GateControlSystem_impl_Instance.rf_receiver.wireless_in</seg>
+      </bo>
+    </element>
+    <bo>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/gate_control_system_with_remote/instances/gate_system_analysis_gatecontrolsystem_impl_instance.aaxl2</seg>
+    </bo>
+    <position/>
+    <size width="1972.3046875" height="605.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/gate_control_system_with_remote/instances/gate_system_analysis_gatecontrolsystem_impl_instance.aaxl2</seg>
+    </context>
+  </config>
+</diagram:Diagram>

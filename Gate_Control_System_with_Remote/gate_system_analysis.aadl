@@ -1,0 +1,384 @@
+package gate_system_analysis
+public
+  with Base_Types;
+  with Data_Model;
+  with SEI; 
+
+  -- =========================================================
+  -- 1. TYPY DANYCH
+  -- =========================================================
+
+  data PinCode
+    properties
+      Data_Model::Data_Representation => Integer;
+  end PinCode;
+
+  data GateCommand
+    properties
+      Data_Model::Data_Representation => Enum; 
+      Data_Model::Enumerators => ("Stop", "Open", "Close");
+  end GateCommand;
+
+  data SafetyStatus
+    properties
+      Data_Model::Data_Representation => Boolean;
+  end SafetyStatus;
+
+  -- =========================================================
+  -- 2. SYSTEM PILOTA (POPRAWIONY NADAJNIK)
+  -- =========================================================
+
+  device RemoteButtons
+    features
+      btn_open: out data port Base_Types::Boolean;
+      btn_close: out data port Base_Types::Boolean;
+      btn_stop: out data port Base_Types::Boolean;
+      bus_access: requires bus access RemoteBus;
+    properties
+      SEI::GrossWeight => 0.05 kg; 
+  end RemoteButtons;
+
+  device RF_Transmitter
+    features
+      cmd_in: in data port GateCommand;
+      signal_out: out data port GateCommand;
+      bus_access: requires bus access RemoteBus;
+    properties
+      SEI::GrossWeight => 0.02 kg;
+  end RF_Transmitter;
+
+  processor RemoteCPU
+    features
+      bus_slot: requires bus access RemoteBus;
+    properties
+      SEI::GrossWeight => 0.01 kg;
+      SEI::MIPSCapacity => 10.0 MIPS;
+  end RemoteCPU;
+
+  memory RemoteRAM
+    features
+      bus_slot: requires bus access RemoteBus;
+    properties
+      SEI::GrossWeight => 0.005 kg;
+  end RemoteRAM;
+
+  bus RemoteBus
+    features
+      access_point: provides bus access RemoteBus;
+    properties
+      SEI::GrossWeight => 0.01 kg;
+      SEI::BandWidthCapacity => 100.0 Kbps;
+  end RemoteBus;
+
+  thread RemoteLogicThread
+    features
+      in_open: in data port Base_Types::Boolean;
+      in_close: in data port Base_Types::Boolean;
+      in_stop: in data port Base_Types::Boolean;
+      cmd_out: out data port GateCommand;
+  end RemoteLogicThread;
+
+  thread implementation RemoteLogicThread.impl
+    properties
+      Dispatch_Protocol => Sporadic;
+      Period => 50 ms;
+  end RemoteLogicThread.impl;
+
+  process RemoteApp
+    features
+      in_open: in data port Base_Types::Boolean;
+      in_close: in data port Base_Types::Boolean;
+      in_stop: in data port Base_Types::Boolean;
+      cmd_out: out data port GateCommand;
+  end RemoteApp;
+
+  process implementation RemoteApp.impl
+    subcomponents
+      logic: thread RemoteLogicThread.impl;
+    connections
+      c1: port in_open -> logic.in_open;
+      c2: port in_close -> logic.in_close;
+      c3: port in_stop -> logic.in_stop;
+      c4: port logic.cmd_out -> cmd_out;
+  end RemoteApp.impl;
+
+  system RemoteController
+    features
+      wireless_out: out data port GateCommand;
+    properties
+      SEI::WeightLimit => 0.2 kg;
+  end RemoteController;
+
+  system implementation RemoteController.impl
+    subcomponents
+      cpu: processor RemoteCPU;
+      mem: memory RemoteRAM;
+      bus_local: bus RemoteBus;
+      buttons: device RemoteButtons;
+      transmitter: device RF_Transmitter;
+      app: process RemoteApp.impl;
+    connections
+      b1: bus access bus_local.access_point <-> cpu.bus_slot;
+      b2: bus access bus_local.access_point <-> mem.bus_slot;
+      b3: bus access bus_local.access_point <-> buttons.bus_access;
+      b4: bus access bus_local.access_point <-> transmitter.bus_access;
+      
+      p1: port buttons.btn_open -> app.in_open {Actual_Connection_Binding => (reference(bus_local));};
+      p2: port buttons.btn_close -> app.in_close {Actual_Connection_Binding => (reference(bus_local));};
+      p3: port buttons.btn_stop -> app.in_stop {Actual_Connection_Binding => (reference(bus_local));};
+      p4: port app.cmd_out -> transmitter.cmd_in {Actual_Connection_Binding => (reference(bus_local));};
+      p5: port transmitter.signal_out -> wireless_out;
+      
+    properties
+      SEI::GrossWeight => 0.15 kg;
+      Actual_Processor_Binding => (reference(cpu)) applies to app;
+      Actual_Memory_Binding => (reference(mem)) applies to app;
+  end RemoteController.impl;
+
+  -- =========================================================
+  -- 3. KOMPONENTY BRAMY (HARDWARE)
+  -- =========================================================
+
+  device UserPanel
+    features
+      pin_out: out data port PinCode;
+      bus_access: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.5 kg;
+      SEI::WeightLimit => 0.6 kg;
+  end UserPanel;
+
+  device RF_Receiver
+    features
+      wireless_in: in data port GateCommand; 
+      remote_cmd_out: out data port GateCommand;
+      bus_access: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.1 kg;
+      SEI::WeightLimit => 0.2 kg;
+  end RF_Receiver;
+
+  device GateMotor
+    features
+      motor_cmd: in data port GateCommand;
+      bus_access: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 8.5 kg;
+      SEI::WeightLimit => 10.0 kg;
+  end GateMotor;
+
+  device WarningLamp
+    features
+      lamp_cmd: in data port Base_Types::Boolean;
+      bus_access: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.3 kg;
+      SEI::WeightLimit => 0.5 kg;
+  end WarningLamp;
+
+  device ObstacleSensor
+    features
+      obstacle_detected: out data port SafetyStatus;
+      bus_access: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.1 kg;
+      SEI::WeightLimit => 0.15 kg;
+      Period => 20 ms;
+  end ObstacleSensor;
+
+  device LimitSwitch
+    features
+      is_active: out data port Base_Types::Boolean;
+      bus_access: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.05 kg;
+      SEI::WeightLimit => 0.1 kg;
+      Period => 50 ms;
+  end LimitSwitch;
+
+
+  -- =========================================================
+  -- 4. OPROGRAMOWANIE BRAMY
+  -- =========================================================
+
+  thread SafetyThread
+    features
+      obstacle_in: in data port SafetyStatus;
+      limit_open_in: in data port Base_Types::Boolean;
+      limit_closed_in: in data port Base_Types::Boolean;
+      safe_to_move: out data port Base_Types::Boolean;
+  end SafetyThread;
+
+  thread implementation SafetyThread.impl
+    properties
+      Dispatch_Protocol => Periodic;
+      Period => 10 ms;
+  end SafetyThread.impl;
+
+  thread InputThread
+    features
+      pin_in: in data port PinCode;
+      remote_in: in data port GateCommand; 
+      user_request: out data port GateCommand;
+  end InputThread;
+
+  thread implementation InputThread.impl
+    properties
+      Dispatch_Protocol => Periodic;
+      Period => 50 ms;
+  end InputThread.impl;
+
+  thread MainControlThread
+    features
+      safety_status: in data port Base_Types::Boolean;
+      user_request: in data port GateCommand;
+      motor_cmd: out data port GateCommand;
+      lamp_cmd: out data port Base_Types::Boolean;
+  end MainControlThread;
+
+  thread implementation MainControlThread.impl
+    properties
+      Dispatch_Protocol => Periodic;
+      Period => 20 ms;
+  end MainControlThread.impl;
+
+  process ControllerProcess
+    features
+      pin_in: in data port PinCode;
+      remote_in: in data port GateCommand;
+      obstacle_in: in data port SafetyStatus;
+      limit_open_in: in data port Base_Types::Boolean;
+      limit_closed_in: in data port Base_Types::Boolean;
+      motor_out: out data port GateCommand;
+      lamp_out: out data port Base_Types::Boolean;
+  end ControllerProcess;
+
+  process implementation ControllerProcess.impl
+    subcomponents
+      th_safety: thread SafetyThread.impl;
+      th_input: thread InputThread.impl;
+      th_main: thread MainControlThread.impl;
+    connections
+      c1: port obstacle_in -> th_safety.obstacle_in;
+      c2_open: port limit_open_in -> th_safety.limit_open_in;
+      c2_closed: port limit_closed_in -> th_safety.limit_closed_in;
+      c3: port pin_in -> th_input.pin_in;
+      c4: port remote_in -> th_input.remote_in;
+      
+      internal1: port th_safety.safe_to_move -> th_main.safety_status;
+      internal2: port th_input.user_request -> th_main.user_request;
+      
+      out1: port th_main.motor_cmd -> motor_out;
+      out2: port th_main.lamp_cmd -> lamp_out;
+  end ControllerProcess.impl;
+
+  -- =========================================================
+  -- 5. PLATFORMA OBLICZENIOWA I MAGISTRALE
+  -- =========================================================
+
+  processor GateCPU
+    features
+      bus_slot: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.05 kg;
+      SEI::WeightLimit => 0.1 kg; 
+      SEI::MIPSCapacity => 100.0 MIPS;
+  end GateCPU;
+
+  memory GateRAM
+    features
+      bus_slot: requires bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.01 kg;
+      SEI::WeightLimit => 0.05 kg; 
+  end GateRAM;
+
+  bus SystemBus
+    features
+      access_point: provides bus access SystemBus;
+    properties
+      SEI::GrossWeight => 0.1 kg;
+      SEI::WeightLimit => 0.3 kg;
+      SEI::BandWidthCapacity => 1.0 Mbps;
+  end SystemBus;
+  
+  bus WirelessEther
+    properties
+      SEI::GrossWeight => 0.0 kg;
+      SEI::BandWidthCapacity => 10.0 Kbps;
+  end WirelessEther;
+
+  -- =========================================================
+  -- 6. GŁÓWNY SYSTEM (BRAMA + PILOT)
+  -- =========================================================
+
+  system GateControlSystem
+    properties
+      SEI::WeightLimit => 20.0 kg;
+  end GateControlSystem;
+
+  system implementation GateControlSystem.impl
+    subcomponents
+      -- SYSTEM BRAMY (HARDWARE)
+      cpu: processor GateCPU;
+      mem: memory GateRAM;
+      main_bus: bus SystemBus;
+      
+      user_panel: device UserPanel;
+      rf_receiver: device RF_Receiver;
+      
+      motor: device GateMotor;
+      lamp: device WarningLamp;
+      
+      sens_obstacle: device ObstacleSensor;
+      sens_open: device LimitSwitch;
+      sens_closed: device LimitSwitch;
+      
+      -- SYSTEM BRAMY (SOFTWARE)
+      controller_app: process ControllerProcess.impl;
+      
+      -- SYSTEM ZDALNY (PILOT)
+      remote_pilot: system RemoteController.impl;
+      
+      -- MEDIUM
+      air_medium: bus WirelessEther;
+
+    connections
+      -- 1. MAGISTRALA
+      bus_cpu: bus access main_bus.access_point <-> cpu.bus_slot;
+      bus_mem: bus access main_bus.access_point <-> mem.bus_slot;
+      
+      bus_pnl: bus access main_bus.access_point <-> user_panel.bus_access;
+      bus_rf:  bus access main_bus.access_point <-> rf_receiver.bus_access;
+      
+      bus_mot: bus access main_bus.access_point <-> motor.bus_access;
+      bus_lmp: bus access main_bus.access_point <-> lamp.bus_access;
+      
+      bus_sob: bus access main_bus.access_point <-> sens_obstacle.bus_access;
+      bus_sop: bus access main_bus.access_point <-> sens_open.bus_access;
+      bus_scl: bus access main_bus.access_point <-> sens_closed.bus_access;
+
+      -- 2. DANE (WEJŚCIA)
+      conn_panel: port user_panel.pin_out -> controller_app.pin_in {Actual_Connection_Binding => (reference(main_bus));};
+      conn_rf_int: port rf_receiver.remote_cmd_out -> controller_app.remote_in {Actual_Connection_Binding => (reference(main_bus));};
+      
+      conn_obs: port sens_obstacle.obstacle_detected -> controller_app.obstacle_in {Actual_Connection_Binding => (reference(main_bus));};
+      conn_lim_o: port sens_open.is_active -> controller_app.limit_open_in {Actual_Connection_Binding => (reference(main_bus));};
+      conn_lim_c: port sens_closed.is_active -> controller_app.limit_closed_in {Actual_Connection_Binding => (reference(main_bus));};
+
+      -- 3. DANE (WYJŚCIA)
+      conn_motor: port controller_app.motor_out -> motor.motor_cmd {Actual_Connection_Binding => (reference(main_bus));};
+      conn_lamp: port controller_app.lamp_out -> lamp.lamp_cmd {Actual_Connection_Binding => (reference(main_bus));};
+
+      -- 4. POŁĄCZENIE WIRELESS
+      wireless_link: port remote_pilot.wireless_out -> rf_receiver.wireless_in {
+         Actual_Connection_Binding => (reference(air_medium));
+      };
+
+    properties
+      Actual_Processor_Binding => (reference(cpu)) applies to controller_app;
+      Actual_Memory_Binding => (reference(mem)) applies to controller_app;
+      
+  end GateControlSystem.impl;
+
+end gate_system_analysis;

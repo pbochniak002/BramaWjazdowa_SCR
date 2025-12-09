@@ -1,0 +1,39 @@
+Weight totals Report
+
+main_bus: [A] Sum of weights (0,100 kg) is below weight limit of 0,300 kg (66,7 % Weight slack)
+main_bus: [A] Net Weight is 0,000 kg
+Warning! air_medium: [L] No net weight plus subcomponent weight or no gross weight
+air_medium: [A] Net Weight is 0,000 kg
+user_panel: [A] Sum of weights (0,500 kg) is below weight limit of 0,600 kg (16,7 % Weight slack)
+user_panel: [A] Net Weight is 0,000 kg
+rf_receiver: [A] Sum of weights (0,100 kg) is below weight limit of 0,200 kg (50,0 % Weight slack)
+rf_receiver: [A] Net Weight is 0,000 kg
+motor: [A] Sum of weights (8,500 kg) is below weight limit of 10,000 kg (15,0 % Weight slack)
+motor: [A] Net Weight is 0,000 kg
+lamp: [A] Sum of weights (0,300 kg) is below weight limit of 0,500 kg (40,0 % Weight slack)
+lamp: [A] Net Weight is 0,000 kg
+sens_obstacle: [A] Sum of weights (0,100 kg) is below weight limit of 0,150 kg (33,3 % Weight slack)
+sens_obstacle: [A] Net Weight is 0,000 kg
+sens_open: [A] Sum of weights (0,050 kg) is below weight limit of 0,100 kg (50,0 % Weight slack)
+sens_open: [A] Net Weight is 0,000 kg
+sens_closed: [A] Sum of weights (0,050 kg) is below weight limit of 0,100 kg (50,0 % Weight slack)
+sens_closed: [A] Net Weight is 0,000 kg
+mem: [A] Sum of weights (0,010 kg) is below weight limit of 0,050 kg (80,0 % Weight slack)
+mem: [A] Net Weight is 0,000 kg
+cpu: [A] Sum of weights (0,050 kg) is below weight limit of 0,100 kg (50,0 % Weight slack)
+cpu: [A] Net Weight is 0,000 kg
+bus_local: [L] Sum of weights / gross weight is 0,010 kg (no limit specified)
+bus_local: [A] Net Weight is 0,000 kg
+buttons: [L] Sum of weights / gross weight is 0,050 kg (no limit specified)
+buttons: [A] Net Weight is 0,000 kg
+transmitter: [L] Sum of weights / gross weight is 0,020 kg (no limit specified)
+transmitter: [A] Net Weight is 0,000 kg
+mem: [L] Sum of weights / gross weight is 0,005 kg (no limit specified)
+mem: [A] Net Weight is 0,000 kg
+cpu: [L] Sum of weights / gross weight is 0,010 kg (no limit specified)
+cpu: [A] Net Weight is 0,000 kg
+Warning! remote_pilot: [G] Sum of weights (0,095 kg) less than gross weight of 0,150 kg (using gross weight)
+remote_pilot: [A] Sum of weights (0,150 kg) is below weight limit of 0,200 kg (25,0 % Weight slack)
+remote_pilot: [A] Net Weight is 0,000 kg
+GateControlSystem_impl_Instance: [A] Sum of weights (9,910 kg) is below weight limit of 20,000 kg (50,4 % Weight slack)
+GateControlSystem_impl_Instance: [A] Net Weight is 0,000 kg
