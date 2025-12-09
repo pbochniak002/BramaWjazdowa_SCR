@@ -102,12 +102,15 @@ Przedstawia proces controller_app z wątkami.
 
 ## Analiza modelu
 
-Model został poddany weryfikacji pod kątem spójności architektonicznej (binding consistency) oraz analizie wagowej (weight analysis).
+Model został poddany weryfikacji pod kątem połączeń oraz analizie wagowej.
 
-### 1. Spójność połączeń (Connection Binding Consistency)
-Przeprowadzono weryfikację poprawności mapowania połączeń logicznych (software) na ścieżki fizyczne (hardware).
-* **Wynik:** Raport `Check Binding Constraints` oraz `Connection Binding Consistency` nie wykazał błędów (`No problems found`).
-* **Wniosek:** Architektura poprawnie uwzględnia media transmisyjne, w tym specyficzne połączenie hybrydowe (Radio -> Kabel) realizowane przez odbiornik RF.
+### 1. Spójność połączeń (Port Connection Consistency)
+Przeprowadzono analizę spójności połączeń portów.
+* **Wynik:** Raport `Port Connection Consistency` nie wykazał błędów.
+  
+![Connection Consistency](connection_consistency.png)
+
+* **Wniosek:** Architektura poprawnie uwzględnia media transmisyjne.
 
 ### 2. Analiza Wagowa (Weight Analysis)
 Przeprowadzono analizę masy systemu w celu weryfikacji zgodności z ograniczeniami konstrukcyjnymi.
@@ -131,7 +134,7 @@ System nie wykazuje błędów w spójności portów ani magistral:
 
 ## Wnioski
 
-1.  **Poprawność Architektury:** Model jest spójny logicznie i sprzętowo. Rozwiązano problem "braku fizycznego połączenia" poprzez poprawne zdefiniowanie dostępu do medium bezprzewodowego (`WirelessEther`) dla nadajnika i odbiornika.
+1.  **Poprawność Architektury:** Model jest spójny logicznie i sprzętowo.
 2.  **Konstrukcja Mechaniczna:** System mieści się w założonych limitach wagowych z dużym marginesem bezpieczeństwa (ponad 50%), co pozwala na ewentualne zastosowanie cięższych, bardziej wytrzymałych podzespołów (np. mocniejszego silnika) bez naruszania wymagań.
 3.  **Bezpieczeństwo:** Zastosowanie najkrótszego okresu próbkowania (10ms) dla wątku bezpieczeństwa (`SafetyThread`) zapewnia szybką reakcję na wykrycie przeszkody.
 
