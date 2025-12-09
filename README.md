@@ -88,11 +88,17 @@ Niezależne wątki przetwarzające wewnątrz procesu sterownika (`ControllerProc
 ### 1. Diagram główny
 Przedstawia główny system bramy wjazdowej.
 
+![Main Diagram](main_diagram.png)
+
 ### 2. Diagram pilota
 Przedstawia podsystem pilota.
 
+![Remote Diagram](remote_diagram.png)
+
 ### 3. Diagram procesu controller_app
 Przedstawia proces controller_app z wątkami.
+
+![Control Diagram](control_diagram.png)
 
 ## Analiza modelu
 
